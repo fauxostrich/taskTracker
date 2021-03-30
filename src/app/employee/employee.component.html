@@ -1,0 +1,44 @@
+<div>
+    <h2>Add a Task</h2>
+    <form #taskRef = "ngForm" (ngSubmit) = "storeTask(taskRef.value)">
+        <mat-form-field>
+            <mat-label color = "black">ID</mat-label>
+            <input color = "black" matInput type = "text" name = "id" ngModel>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label color = "black">Name</mat-label>
+            <input color = "black" matInput type = "text" name = "name" ngModel>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label color = "black">Task</mat-label>
+            <input color = "black" matInput type = "text" name = "task" ngModel>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label color = "black">Dead Line</mat-label>
+            <input color = "black" matInput type = "text" name = "deadLine" ngModel>
+        </mat-form-field>
+        <br/>
+        <button mat-stroked-button color = "grey" type = "submit">Submit</button>
+        <button mat-stroked-button color = "grey" type = "reset">Reset</button>
+    </form>
+</div>
+<form>
+    <table border = "1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Task</th>
+            <th>Dead Line</th>
+        </tr>
+        <tr *ngFor="let obj of data">
+            <td>{{obj.id}}</td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.task}}</td>
+            <td>{{obj.deadLine}}</td>
+        </tr>
+    </table>
+
+</form>
